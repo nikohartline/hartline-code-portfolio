@@ -5,6 +5,6 @@ account: nikohartline
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 215505
-bundleId: 984783
+bundleId: 985437
 url: https://nikohartline.shinyapps.io/anchoveta_web_app/
-when: 1505609856.51767
+when: 1505689405.74138
