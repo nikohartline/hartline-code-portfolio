@@ -14,7 +14,9 @@ shinyUI(navbarPage("Anchoveta Web Application: UI Development by Niko Hartline",
                                             p("The web app was designed for a user to control a wide range of variables affecting Peruvian anchovy fisheries such as quota levels, operational costs, and discard (waste) rates. Changes to these variables would then influence the outcomes of the fisheries under the four presented management strategies, allowing a user (purposed for use by the Peruvian government) to view economic effects of possible policy options to reduce likelihood of fisheries collapse."),
                                             p(strong("The application as displayed here is only a partial representation of the app, showcasing the work I contributed to the Anchoveta Fish App. Collaborators included Juliano Palacios and Renato Molina.")),
                                             p(strong("The app was originally developed in Spanish for use in Peru. In this version of the app, titles and input boxes have been translated to English.")),
-                                            hr(),br()
+                                            hr(),br(),
+                                            p("For more information on the Peruvian Anchovy, visit", a("https://en.wikipedia.org/wiki/Peruvian_anchoveta", href="https://en.wikipedia.org/wiki/Peruvian_anchoveta", target="_blank")),
+                                            p("For more information on the app and project, visit my website", a("www.nikohartline.com/project/anchoveta-web-application/", href="https://www.nikohartline.com/project/anchoveta-web-application/", target="_blank"),"or GitHub",a("www.github.com/nikohartline", href="http://www.github.com/nikohartline", target="_blank"))
                                      ),
                                      column(1,"")
                             )
