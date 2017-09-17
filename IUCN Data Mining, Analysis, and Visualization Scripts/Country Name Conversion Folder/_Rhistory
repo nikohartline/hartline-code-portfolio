@@ -1,0 +1,512 @@
+theme(legend.position="none")+
+scale_alpha_manual(values=c(.3,.8))+
+scale_color_manual(values=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3"))
+}
+windows()
+propgraph
+}
+indx20=which(csvwashtrial$FILTERSIZE=="20")
+indxNEW=which(csvwashtrial$AGE=="NEW")
+indxFRONT=which(csvwashtrial$LOAD=="FRONT")
+indx333=which(csvwashtrial$FILTERSIZE=="333")
+indxAGED=which(csvwashtrial$AGE=="AGED")
+indxTOP=which(csvwashtrial$LOAD=="TOP")
+NEWFRONT20=intersect(intersect(indx20,indxNEW),indxFRONT)
+NEWFRONT333=intersect(intersect(indx333,indxNEW),indxFRONT)
+NEWTOP20=intersect(intersect(indx20,indxNEW),indxTOP)
+NEWTOP333=intersect(intersect(indx333,indxNEW),indxTOP)
+AGEDFRONT20=intersect(intersect(indx20,indxAGED),indxFRONT)
+AGEDFRONT333=intersect(intersect(indx333,indxAGED),indxFRONT)
+AGEDTOP20=intersect(intersect(indx20,indxAGED),indxTOP)
+AGEDTOP333=intersect(intersect(indx333,indxAGED),indxTOP)
+csvwashtrial=csvwashtrial[csvwashtrial$FILTERSIZE=='20',]
+csvwashtrial <- read.csv("~/Desktop/csvwashtrialMIN.csv")
+csvwashtrial=csvwashtrial[csvwashtrial$FILTERSIZE=='20',]
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="CO")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="BS")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="R2")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="ST")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="NR")
+csvwashtrial$FILTERMASS=(csvwashtrial$FILTERVIALMASS-csvwashtrial$VIALMASS)*1000
+csvwashtrial$FILTERSIZE=as.factor(csvwashtrial$FILTERSIZE)
+#min(csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']],na.rm=TRUE) #NOTE: this is the correct code to pull the minimum of the group, but the below code deals with a few outliers (e.g. Snap-T and an R2 with weird values)
+areamass20vec=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+n <- length(areamass20vec)
+filter20AM=sort(areamass20vec)[1]
+csvwashtrial[csvwashtrial$FILTERSIZE=="20",][['FIBERMASS']]=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]-filter20AM*csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+for(i in 1:length(csvwashtrial$FIBERMASS)){
+if(csvwashtrial$FIBERMASS[i]<0||is.na(csvwashtrial$FIBERMASS[i])){
+csvwashtrial$FIBERMASS[i]=NA
+warning(paste(i,csvwashtrial$NUM_TYPE_FILTERSIZE_AGE_LOAD[i]))
+}
+} #These warnings indicate a negative or NA value for fiber mass.
+csvwashtrial$SCALEDFIBERMASS=csvwashtrial$FIBERMASS*(36/5)
+csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]=csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]*(136/36)
+tst=lm(SCALEDFIBERMASS~TYPE+LOAD+FILTERSIZE+LOAD,data=csvwashtrial)
+tst2=lm(SCALEDFIBERMASS~TYPE+FILTERSIZE,data=csvwashtrial[csvwashtrial$LOAD=="FRONT",])
+tst3=kruskal.test(SCALEDFIBERMASS~TYPE,data=csvwashtrial)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS) #non-normal (need nonparametric tests)
+tst4=wilcox.test(SCALEDFIBERMASS~LOAD,data=csvwashtrial[csvwashtrial$TYPE=="BS",])
+library(ggplot2)
+library(RColorBrewer)
+library(scales)
+library(pgirmess)
+jacketname=c("Nano Air ","Snap-T ","R2 ","Better Sweater ","Generic Brand ")
+indxAGED=which(csvwashtrial$AGE=="AGED")
+indxTOP=which(csvwashtrial$LOAD=="TOP")
+indxNEW=which(csvwashtrial$AGE=="NEW")
+indxFRONT=which(csvwashtrial$LOAD=="FRONT")
+NEWFRONT20=intersect(intersect(indx20,indxNEW),indxFRONT)
+NEWFRONT333=intersect(intersect(indx333,indxNEW),indxFRONT)
+NEWTOP20=intersect(intersect(indx20,indxNEW),indxTOP)
+NEWTOP333=intersect(intersect(indx333,indxNEW),indxTOP)
+AGEDFRONT20=intersect(intersect(indx20,indxAGED),indxFRONT)
+AGEDFRONT333=intersect(intersect(indx333,indxAGED),indxFRONT)
+AGEDTOP20=intersect(intersect(indx20,indxAGED),indxTOP)
+AGEDTOP333=intersect(intersect(indx333,indxAGED),indxTOP)
+tstz3=wilcox.test(csvwashtrial[indxNEW,][["SCALEDFIBERMASS"]],csvwashtrial[indxAGED,][["SCALEDFIBERMASS"]],paired=TRUE)
+tstz3
+testable=csvwashtrial[csvwashtrial$TYPE="CO",]
+testable=csvwashtrial[csvwashtrial$TYPE=="CO",]
+testable
+indx20=which(testable$FILTERSIZE=="20")
+indxNEW=which(testable$AGE=="NEW")
+indxFRONT=which(testable$LOAD=="FRONT")
+indx333=which(testable$FILTERSIZE=="333")
+indxAGED=which(testable$AGE=="AGED")
+indxTOP=which(testable$LOAD=="TOP")
+tstz3=wilcox.test(testable[indxNEW,][["SCALEDFIBERMASS"]],testable[indxAGED,][["SCALEDFIBERMASS"]],paired=TRUE)
+tstz3
+testable[indxNEW,][["SCALEDFIBERMASS"]]
+testable[indxAGED,][["SCALEDFIBERMASS"]]
+testable[indxAGED,][["SCALEDFIBERMASS"]]-testable[indxNEW,][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGE",]-csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",]
+csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGE",]
+csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",]
+csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",]-csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",]
+csvwashtrial[["SCALEDFIBERMASS"]][csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",]-csvwashtrial[["SCALEDFIBERMASS"]][csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",]
+csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="BS"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="BS"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="R2"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="R2"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="ST"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="ST"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]],csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]])
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]],csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]])
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]],csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]],paired=TRUE)
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]+150,csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]],paired=TRUE)
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]+150,csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]])
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]+150,csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]],paired=TRUE)
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="AGED",][5:8][["SCALEDFIBERMASS"]],csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="NEW",][5:8][["SCALEDFIBERMASS"]])
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]][5:8],csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]][5:8])
+wilcox.test(csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]][4:7],csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]][4:7])
+shapiro.test(csvwashtrial$SCALEDFIBERMASS) #non-normal (need nonparametric tests)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD="TOP"]) #non-normal (need nonparametric tests)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD="TOP"]) #non-normal (need nonparametric tests)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]) #non-normal (need nonparametric tests)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="FRONT"]) #non-normal (need nonparametric tests)
+tst=lm(SCALEDFIBERMASS~TYPE+AGE,data=csvwashtrial[csvwashtrial$LOAD == "FRONT"])
+tst=lm(SCALEDFIBERMASS~TYPE+AGE,data=csvwashtrial[csvwashtrial$LOAD == "FRONT",])
+csvwashtrial[csvwashtrial$LOAD == "FRONT",]
+tst=lm(SCALEDFIBERMASS~TYPE+AGE,data=)
+testing123=csvwashtrial[csvwashtrial$LOAD == "FRONT",]
+tst=lm(SCALEDFIBERMASS~TYPE+AGE,data=testing123)
+tst
+summary(tst)
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="CO")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="BS")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="ST")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="NR")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="R2")
+tst=lm(SCALEDFIBERMASS~TYPE+AGE,data=testing123)
+summary(tst)
+testing123=csvwashtrial[csvwashtrial$LOAD == "FRONT",]
+tst=lm(SCALEDFIBERMASS~TYPE+AGE,data=testing123)
+summary(tst)
+csvwashtrial <- read.csv("~/Desktop/csvwashtrialMIN.csv")
+csvwashtrial <- read.csv("~/Desktop/csvwashtrialMIN.csv")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="CO")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="BS")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="R2")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="ST")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="NR")
+csvwashtrial$FILTERMASS=(csvwashtrial$FILTERVIALMASS-csvwashtrial$VIALMASS)*1000
+csvwashtrial$FILTERSIZE=as.factor(csvwashtrial$FILTERSIZE)
+#min(csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']],na.rm=TRUE) #NOTE: this is the correct code to pull the minimum of the group, but the below code deals with a few outliers (e.g. Snap-T and an R2 with weird values)
+areamass20vec=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+n <- length(areamass20vec)
+filter20AM=sort(areamass20vec)[1]
+areamass333vec=csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['AREA']]
+k <- length(areamass333vec)
+filter333AM=sort(areamass333vec)[1]
+csvwashtrial[csvwashtrial$FILTERSIZE=="20",][['FIBERMASS']]=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]-filter20AM*csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+csvwashtrial[csvwashtrial$FILTERSIZE=="333",][['FIBERMASS']]=csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['FILTERMASS']]-filter333AM*csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['AREA']]
+for(i in 1:length(csvwashtrial$FIBERMASS)){
+if(csvwashtrial$FIBERMASS[i]<0||is.na(csvwashtrial$FIBERMASS[i])){
+csvwashtrial$FIBERMASS[i]=NA
+warning(paste(i,csvwashtrial$NUM_TYPE_FILTERSIZE_AGE_LOAD[i]))
+}
+} #These warnings indicate a negative or NA value for fiber mass.
+csvwashtrial$SCALEDFIBERMASS=csvwashtrial$FIBERMASS*(36/5)
+csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]=csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]*(136/36)
+tst=lm(SCALEDFIBERMASS~TYPE+LOAD+FILTERSIZE+LOAD,data=csvwashtrial)
+tst2=lm(SCALEDFIBERMASS~TYPE+FILTERSIZE,data=csvwashtrial[csvwashtrial$LOAD=="FRONT",])
+tst3=kruskal.test(SCALEDFIBERMASS~TYPE,data=csvwashtrial)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS) #non-normal (need nonparametric tests)
+tst4=wilcox.test(SCALEDFIBERMASS~LOAD,data=csvwashtrial[csvwashtrial$TYPE=="BS",])
+library(ggplot2)
+library(RColorBrewer)
+library(scales)
+library(pgirmess)
+jacketname=c("Nano Air ","Snap-T ","R2 ","Better Sweater ","Generic Brand ")
+graph2grpcomp=function(grp1=rmvoutlier,grp2=csvwashtrial,namegrp1="rmvoutlier",namegrp2="original",titleinp="outlier vs original comparison of avg fiber masses (grams)",graphtype=0){
+#colurs = sample(colours(), 2) randomizer
+colurs=c("gray99","gray28")
+aggmass=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp1,FUN=mean))
+aggmass2=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp2,FUN=mean))
+sdmass=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp1,FUN=sd))
+sdmass2=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp2,FUN=sd))
+aggmass3=rbind(aggmass,aggmass2)
+sdmass3=rbind(sdmass,sdmass2)
+aggmass3[['ci']]=sdmass3[[2]]
+aggmass3[["data"]]=c(namegrp1,namegrp1,namegrp1,namegrp1,namegrp1,namegrp2,namegrp2,namegrp2,namegrp2,namegrp2)
+propgraph=ggplot(aes(x=TYPE,y=SCALEDFIBERMASS,fill=TYPE),data=aggmass3)+
+geom_bar(aes(alpha=data),stat="identity",position=position_dodge())+
+geom_bar(aes(alpha=data),stat="identity",color="black",size=1,position=position_dodge(),show_guide=FALSE)+
+scale_x_discrete(breaks=c("NR","ST","R2","BS","CO"),labels=jacketname)+
+scale_fill_manual(values=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3"))+
+guides(fill=FALSE)+
+scale_alpha_manual(values=c(.2,.9),guide=guide_legend(title=NULL,direction="horizontal"))+
+ylab("Average Fiber Mass (mg)")+
+xlab(NULL)+
+ggtitle(titleinp)+
+geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci,group=data), width=.2,position=position_dodge(.9),alpha=1)+
+theme_bw()+
+theme(legend.justification=c(0,1), legend.position=c(0,1))
+if(graphtype==1){
+graphdata=rbind(grp1,grp2)
+propgraph=ggplot(data=graphdata,aes(x=TYPE,y=SCALEDFIBERMASS,color=TYPE,alpha=AGE,size=3))+
+geom_jitter(position=position_jitter(width=0.06))+
+ylab("Fiber Mass (g)")+
+xlab(NULL)+
+ggtitle(titleinp)+
+#geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci), width=.2,position=position_dodge(.9))+
+theme_bw()+
+theme(legend.position="none")+
+scale_alpha_manual(values=c(.3,.8))+
+scale_color_manual(values=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3"))
+}
+windows()
+propgraph
+}
+indx20=which(csvwashtrial$FILTERSIZE=="20")
+indxNEW=which(csvwashtrial$AGE=="NEW")
+indxFRONT=which(csvwashtrial$LOAD=="FRONT")
+indx333=which(csvwashtrial$FILTERSIZE=="333")
+indxAGED=which(csvwashtrial$AGE=="AGED")
+indxTOP=which(csvwashtrial$LOAD=="TOP")
+NEWFRONT20=intersect(intersect(indx20,indxNEW),indxFRONT)
+NEWFRONT333=intersect(intersect(indx333,indxNEW),indxFRONT)
+NEWTOP20=intersect(intersect(indx20,indxNEW),indxTOP)
+NEWTOP333=intersect(intersect(indx333,indxNEW),indxTOP)
+AGEDFRONT20=intersect(intersect(indx20,indxAGED),indxFRONT)
+AGEDFRONT333=intersect(intersect(indx333,indxAGED),indxFRONT)
+AGEDTOP20=intersect(intersect(indx20,indxAGED),indxTOP)
+AGEDTOP333=intersect(intersect(indx333,indxAGED),indxTOP)
+grapher2=function(jackettype){
+aggmass=data.frame(aggregate(SCALEDFIBERMASS~AGELOAD+TYPE,data=combinedtable,FUN=mean))
+sdmass=data.frame(aggregate(SCALEDFIBERMASS~AGELOAD+TYPE,data=combinedtable,FUN=sd))
+aggmass[['ci']]=sdmass[[3]]
+filler=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3")
+if(jackettype!="ALL"){
+aggmass=aggmass[aggmass[["TYPE"]]==jackettype,]
+aggmass[["TYPE"]]=factor(aggmass[["TYPE"]])
+filler=filler[which(levels(combinedtable$TYPE)==jackettype)]
+posholder=position_dodge(.9)
+gtst=FALSE
+errbar=geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci,group=AGELOAD), width=.2,position=position_dodge(.9),alpha=1)
+alph=c(.9,.2,.7,.4)
+}else{
+posholder="stack"
+gtst=TRUE
+errbar=NULL
+alph=c(.8,.6,.7,.5)}
+propgraph=ggplot(aes(x=AGELOAD,y=SCALEDFIBERMASS,fill=TYPE),data=aggmass)+
+geom_bar(aes(alpha=AGELOAD),stat="identity",width=.8,position=posholder,show_guide=gtst)+
+geom_bar(aes(alpha=AGELOAD),stat="identity",color="black",width=.8,position=posholder,show_guide=FALSE)+
+scale_fill_manual(values=filler)+
+scale_alpha_manual(values=alph,guide=FALSE)+
+ylab("Average Fiber Mass (mg)")+
+xlab(NULL)+
+ggtitle(paste(jacketname[which(levels(combinedtable$TYPE)==jackettype)],"Treatment Type Comparison of Average Fiber Mass Shed",sep=""))+
+errbar+
+theme_bw()
+windows()
+propgraph
+}
+csvwashtrial <- read.csv("~/Desktop/csvwashtrialMIN.csv")
+library(ggplot2)
+library(RColorBrewer)
+library(scales)
+library(pgirmess)
+csvwashtrial=csvwashtrial[csvwashtrial$FILTERSIZE=="333",]
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="CO")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="BS")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="R2")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="ST")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="NR")
+csvwashtrial$FILTERMASS=(csvwashtrial$FILTERVIALMASS-csvwashtrial$VIALMASS)*1000
+csvwashtrial$FILTERSIZE=as.factor(csvwashtrial$FILTERSIZE)
+areamass20vec=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+n <- length(areamass20vec)
+filter20AM=sort(areamass20vec)[1]
+csvwashtrial[csvwashtrial$FILTERSIZE=="20",][['FIBERMASS']]=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]-filter20AM*csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+for(i in 1:length(csvwashtrial$FIBERMASS)){
+if(csvwashtrial$FIBERMASS[i]<0||is.na(csvwashtrial$FIBERMASS[i])){
+csvwashtrial$FIBERMASS[i]=NA
+warning(paste(i,csvwashtrial$NUM_TYPE_FILTERSIZE_AGE_LOAD[i]))
+}
+} #These warnings indicate a negative or NA value for fiber mass.
+csvwashtrial$SCALEDFIBERMASS=csvwashtrial$FIBERMASS*(36/5)
+csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]=csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]*(136/36)
+csvwashtrial$logSCALEDFIBERMASS_plus1=log(csvwashtrial$SCALEDFIBERMASS+1)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS) #non-normal (need nonparametric tests)
+shapiro.test(csvwashtrial$logSCALEDFIBERMASS_plus1)
+anovatst=aov(SCALEDFIBERMASS~TYPE+LOAD+AGE,data=csvwashtrial)
+tukeypost=TukeyHSD(anovatst)
+tst=lm(SCALEDFIBERMASS~TYPE+AGE+LOAD,data=csvwashtrial)
+logtst=lm(logSCALEDFIBERMASS_plus1~TYPE+AGE+LOAD,data=csvwashtrial)
+tst2=lm(SCALEDFIBERMASS~TYPE,data=csvwashtrial[csvwashtrial$LOAD=="FRONT",])
+tst3=kruskal.test(SCALEDFIBERMASS~TYPE,data=csvwashtrial)
+kruskalmc(SCALEDFIBERMASS~TYPE,data=csvwashtrial[csvwashtrial$LOAD=="FRONT",])
+tst4=wilcox.test(SCALEDFIBERMASS~LOAD,data=csvwashtrial[csvwashtrial$TYPE=="BS",])
+jacketname=c("Nano Air ","Snap-T ","R2 ","Better Sweater ","Generic Brand ")
+graph2grpcomp=function(grp1=rmvoutlier,grp2=csvwashtrial,namegrp1="rmvoutlier",namegrp2="original",titleinp="outlier vs original comparison of avg fiber masses (grams)",graphtype=0){
+#colurs = sample(colours(), 2) randomizer
+colurs=c("gray99","gray28")
+aggmass=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp1,FUN=mean))
+aggmass2=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp2,FUN=mean))
+sdmass=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp1,FUN=sd))
+sdmass2=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp2,FUN=sd))
+aggmass3=rbind(aggmass,aggmass2)
+sdmass3=rbind(sdmass,sdmass2)
+aggmass3[['ci']]=sdmass3[[2]]
+aggmass3[["data"]]=c(namegrp1,namegrp1,namegrp1,namegrp1,namegrp1,namegrp2,namegrp2,namegrp2,namegrp2,namegrp2)
+propgraph=ggplot(aes(x=TYPE,y=SCALEDFIBERMASS,fill=TYPE),data=aggmass3)+
+geom_bar(aes(alpha=data),stat="identity",position=position_dodge())+
+geom_bar(aes(alpha=data),stat="identity",color="black",size=1,position=position_dodge(),show_guide=FALSE)+
+scale_x_discrete(breaks=c("NR","ST","R2","BS","CO"),labels=jacketname)+
+scale_fill_manual(values=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3"))+
+guides(fill=FALSE)+
+scale_alpha_manual(values=c(.2,.9),guide=guide_legend(title=NULL,direction="horizontal"))+
+ylab("Average Fiber Mass (mg)")+
+xlab(NULL)+
+ggtitle(titleinp)+
+geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci,group=data), width=.2,position=position_dodge(.9),alpha=1)+
+theme_bw()+
+theme(legend.justification=c(0,1), legend.position=c(0,1))
+if(graphtype==1){
+graphdata=rbind(grp1,grp2)
+propgraph=ggplot(data=graphdata,aes(x=TYPE,y=SCALEDFIBERMASS,color=TYPE,shape=LOAD,alpha=.95,size=2.5))+
+geom_jitter(position=position_jitter(width=0.1))+
+ylab("Difference in Fiber Mass (mg)")+
+xlab(NULL)+
+ggtitle(titleinp)+
+#geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci), width=.2,position=position_dodge(.9))+
+theme_bw()+
+theme(legend.position="none")+
+scale_shape_manual(values=c(15,17))+
+scale_color_manual(values=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3"))
+}
+windows()
+propgraph
+}
+csvwashtrial <- read.csv("~/Desktop/csvwashtrialMIN.csv")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="CO")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="BS")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="R2")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="ST")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="NR")
+csvwashtrial$FILTERMASS=(csvwashtrial$FILTERVIALMASS-csvwashtrial$VIALMASS)*1000
+csvwashtrial$FILTERSIZE=as.factor(csvwashtrial$FILTERSIZE)
+#min(csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']],na.rm=TRUE) #NOTE: this is the correct code to pull the minimum of the group, but the below code deals with a few outliers (e.g. Snap-T and an R2 with weird values)
+areamass20vec=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+n <- length(areamass20vec)
+filter20AM=sort(areamass20vec)[1]
+areamass333vec=csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['AREA']]
+k <- length(areamass333vec)
+filter333AM=sort(areamass333vec)[1]
+csvwashtrial[csvwashtrial$FILTERSIZE=="20",][['FIBERMASS']]=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]-filter20AM*csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+csvwashtrial[csvwashtrial$FILTERSIZE=="333",][['FIBERMASS']]=csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['FILTERMASS']]-filter333AM*csvwashtrial[csvwashtrial$FILTERSIZE=='333',][['AREA']]
+for(i in 1:length(csvwashtrial$FIBERMASS)){
+if(csvwashtrial$FIBERMASS[i]<0||is.na(csvwashtrial$FIBERMASS[i])){
+csvwashtrial$FIBERMASS[i]=NA
+warning(paste(i,csvwashtrial$NUM_TYPE_FILTERSIZE_AGE_LOAD[i]))
+}
+} #These warnings indicate a negative or NA value for fiber mass.
+csvwashtrial$SCALEDFIBERMASS=csvwashtrial$FIBERMASS*(36/5)
+csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]=csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]*(136/36)
+tst=lm(SCALEDFIBERMASS~TYPE+LOAD+FILTERSIZE+LOAD,data=csvwashtrial)
+tst2=lm(SCALEDFIBERMASS~TYPE+FILTERSIZE,data=csvwashtrial[csvwashtrial$LOAD=="FRONT",])
+tst3=kruskal.test(SCALEDFIBERMASS~TYPE,data=csvwashtrial)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS) #non-normal (need nonparametric tests)
+tst4=wilcox.test(SCALEDFIBERMASS~LOAD,data=csvwashtrial[csvwashtrial$TYPE=="BS",])
+csvwashtrial=csvwashtrial[csvwashtrial$FILTERSIZE=="333",]
+jacketname=c("Nano Air ","Snap-T ","R2 ","Better Sweater ","Generic Brand ")
+graph2grpcomp=function(grp1=rmvoutlier,grp2=csvwashtrial,namegrp1="rmvoutlier",namegrp2="original",titleinp="outlier vs original comparison of avg fiber masses (grams)",graphtype=0){
+#colurs = sample(colours(), 2) randomizer
+colurs=c("gray99","gray28")
+aggmass=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp1,FUN=mean))
+aggmass2=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp2,FUN=mean))
+sdmass=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp1,FUN=sd))
+sdmass2=data.frame(aggregate(SCALEDFIBERMASS~TYPE,data=grp2,FUN=sd))
+aggmass3=rbind(aggmass,aggmass2)
+sdmass3=rbind(sdmass,sdmass2)
+aggmass3[['ci']]=sdmass3[[2]]
+aggmass3[["data"]]=c(namegrp1,namegrp1,namegrp1,namegrp1,namegrp1,namegrp2,namegrp2,namegrp2,namegrp2,namegrp2)
+propgraph=ggplot(aes(x=TYPE,y=SCALEDFIBERMASS,fill=TYPE),data=aggmass3)+
+geom_bar(aes(alpha=data),stat="identity",position=position_dodge())+
+geom_bar(aes(alpha=data),stat="identity",color="black",size=1,position=position_dodge(),show_guide=FALSE)+
+scale_x_discrete(breaks=c("NR","ST","R2","BS","CO"),labels=jacketname)+
+scale_fill_manual(values=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3"))+
+guides(fill=FALSE)+
+scale_alpha_manual(values=c(.2,.9),guide=guide_legend(title=NULL,direction="horizontal"))+
+ylab("Average Fiber Mass (mg)")+
+xlab(NULL)+
+ggtitle(titleinp)+
+geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci,group=data), width=.2,position=position_dodge(.9),alpha=1)+
+theme_bw()+
+theme(legend.justification=c(0,1), legend.position=c(0,1))
+if(graphtype==1){
+graphdata=rbind(grp1,grp2)
+propgraph=ggplot(data=graphdata,aes(x=TYPE,y=SCALEDFIBERMASS,color=TYPE,shape=LOAD,alpha=.95,size=2.5))+
+geom_jitter(position=position_jitter(width=0.1))+
+ylab("Difference in Fiber Mass (mg)")+
+xlab(NULL)+
+ggtitle(titleinp)+
+#geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci), width=.2,position=position_dodge(.9))+
+theme_bw()+
+theme(legend.position="none")+
+scale_shape_manual(values=c(15,17))+
+scale_color_manual(values=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3"))
+}
+windows()
+propgraph
+}
+csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="NR"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="BS"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="BS"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="R2"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="R2"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="ST"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="ST"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="AGED",][["SCALEDFIBERMASS"]]-csvwashtrial[csvwashtrial$TYPE=="CO"&csvwashtrial$AGE=="NEW",][["SCALEDFIBERMASS"]]
+shapiro.test(csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="FRONT"]) #NORMAL IF RUN FOR 20um ONLY!
+testing123=csvwashtrial[csvwashtrial$LOAD == "FRONT",]
+tst=lm(SCALEDFIBERMASS~TYPE+AGE,data=testing123)
+indxNEW=which(csvwashtrial$AGE=="NEW")
+indxFRONT=which(csvwashtrial$LOAD=="FRONT")
+indxAGED=which(csvwashtrial$AGE=="AGED")
+indxTOP=which(csvwashtrial$LOAD=="TOP")
+csvwashtrial$AGELOAD=factor(paste(csvwashtrial$AGE,csvwashtrial$LOAD,sep=" "),levels=c("NEW FRONT","AGED FRONT","NEW TOP","AGED TOP"))
+grapher2=function(jackettype){
+aggmass=data.frame(aggregate(SCALEDFIBERMASS~AGELOAD+TYPE,data=csvwashtrial,FUN=mean))
+sdmass=data.frame(aggregate(SCALEDFIBERMASS~AGELOAD+TYPE,data=csvwashtrial,FUN=sd))
+aggmass[['ci']]=sdmass[[3]]
+filler=c("red4","darkorange3","yellow2","springgreen4","deepskyblue3")
+if(jackettype!="ALL"){
+aggmass=aggmass[aggmass[["TYPE"]]==jackettype,]
+aggmass[["TYPE"]]=factor(aggmass[["TYPE"]])
+filler=filler[which(levels(csvwashtrial$TYPE)==jackettype)]
+posholder=position_dodge(.9)
+gtst=FALSE
+errbar=geom_errorbar(aes(ymax=SCALEDFIBERMASS+ci,ymin=SCALEDFIBERMASS-ci,group=AGELOAD), width=.2,position=position_dodge(.9),alpha=1)
+alph=c(.9,.2,.7,.4)
+}else{
+aggmass=data.frame(aggregate(SCALEDFIBERMASS~AGELOAD+TYPE,data=csvwashtrial,FUN=sum))
+posholder="stack"
+gtst=TRUE
+errbar=NULL
+alph=c(.8,.6,.7,.5)}
+propgraph=ggplot(aes(x=AGELOAD,y=SCALEDFIBERMASS,fill=TYPE),data=aggmass)+
+geom_bar(aes(alpha=AGELOAD),stat="identity",width=.8,position=posholder,show_guide=gtst)+
+geom_bar(aes(alpha=AGELOAD),stat="identity",color="black",width=.8,position=posholder,show_guide=FALSE)+
+scale_fill_manual(values=filler)+
+scale_alpha_manual(values=alph,guide=FALSE)+
+ylab("Average Fiber Mass (mg)")+
+xlab(NULL)+
+ggtitle(paste(jacketname[which(levels(csvwashtrial$TYPE)==jackettype)],"Treatment Type Comparison of Average Fiber Mass Shed",sep=""))+
+errbar+
+geom_jitter(data=csvwashtrial[csvwashtrial$TYPE==jackettype,],aes(x=AGELOAD,y=SCALEDFIBERMASS),position=position_jitter(width=0.1),color="blue",size=2,show_guide=FALSE)+
+theme_bw()
+windows()
+propgraph
+}
+grapher2("NR")
+grapher2("ST")
+grapher2("R2")
+grapher2("BS")
+grapher2("CO")
+grapher2("ALL")
+?csvwashtrial
+names(csvwashtrial)
+View(csvwashtrial)
+sum(csvwashtrial[18])
+sum(csvwashtrial[18])/sum(csvwashtrial[16])
+#4%
+csvwashtrial <- read.csv("~/Desktop/csvwashtrialMIN.csv")
+csvwashtrial=csvwashtrial[csvwashtrial$FILTERSIZE!="333",]
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="CO")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="BS")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="R2")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="ST")
+csvwashtrial$TYPE=relevel(csvwashtrial$TYPE,ref="NR")
+csvwashtrial$FILTERMASS=(csvwashtrial$FILTERVIALMASS-csvwashtrial$VIALMASS)*1000
+csvwashtrial$FILTERSIZE=as.factor(csvwashtrial$FILTERSIZE)
+areamass20vec=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]/csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+n <- length(areamass20vec)
+filter20AM=sort(areamass20vec)[1]
+csvwashtrial[csvwashtrial$FILTERSIZE=="20",][['FIBERMASS']]=csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['FILTERMASS']]-filter20AM*csvwashtrial[csvwashtrial$FILTERSIZE=='20',][['AREA']]
+for(i in 1:length(csvwashtrial$FIBERMASS)){
+if(csvwashtrial$FIBERMASS[i]<0||is.na(csvwashtrial$FIBERMASS[i])){
+csvwashtrial$FIBERMASS[i]=NA
+warning(paste(i,csvwashtrial$NUM_TYPE_FILTERSIZE_AGE_LOAD[i]))
+}
+} #These warnings indicate a negative or NA value for fiber mass.
+csvwashtrial$SCALEDFIBERMASS=csvwashtrial$FIBERMASS*(36/5)
+csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]=csvwashtrial$SCALEDFIBERMASS[csvwashtrial$LOAD=="TOP"]*(136/36)
+csvwashtrial$logSCALEDFIBERMASS_plus1=log(csvwashtrial$SCALEDFIBERMASS+1)
+shapiro.test(csvwashtrial$SCALEDFIBERMASS) #non-normal (need nonparametric tests)
+shapiro.test(csvwashtrial$logSCALEDFIBERMASS_plus1)
+anovatst=aov(SCALEDFIBERMASS~TYPE+LOAD+AGE,data=csvwashtrial)
+tukeypost=TukeyHSD(anovatst)
+tst=lm(SCALEDFIBERMASS~TYPE+AGE+LOAD,data=csvwashtrial)
+logtst=lm(logSCALEDFIBERMASS_plus1~TYPE+AGE+LOAD,data=csvwashtrial)
+tst2=lm(SCALEDFIBERMASS~TYPE,data=csvwashtrial[csvwashtrial$LOAD=="FRONT",])
+tst3=kruskal.test(SCALEDFIBERMASS~TYPE,data=csvwashtrial)
+kruskalmc(SCALEDFIBERMASS~TYPE,data=csvwashtrial[csvwashtrial$LOAD=="FRONT",])
+tst4=wilcox.test(SCALEDFIBERMASS~LOAD,data=csvwashtrial[csvwashtrial$TYPE=="BS",])
+jacketname=c("Nano Air ","Snap-T ","R2 ","Better Sweater ","Generic Brand ")
+sum(csvwashtrial[18])/sum(csvwashtrial[16])
+View(csvwashtrial)
+print("hello")
+rep("hello",10)
+dir()
+setwd("~/Desktop/Tilman Project/Country Conversion Folder")
+CountryConversionFunction <- read.csv(paste(getwd(),"/CountryConversionFunction.csv",sep=""))
+#NOTE DO NOT USE FILES WITH "Conversion" IN THE FILE NAME.
+#filename is the name of the file (has to be in the same directory).
+#inputconv has to match the name of a column in the country conversion table.
+#keep is TRUE or FALSE whether the original column is wanted
+convertfunction=function(inputconv,outputconv,keep=TRUE){
+require(plyr)
+if(any(length(which(!grepl("Conversion",dir())))>1,length(which(!grepl("Conversion",dir())))==0)){stop("Incorrect number of unconverted .csv files in Country Conversion Folder. Requires one unconverted .csv file.")}
+convtable=read.csv(paste(getwd(),dir()[which(!grepl("Conversion",dir()))],sep="/"))
+colnames(convtable)[which(colnames(convtable)==inputconv)]="tempxxname"
+joinconversion=data.frame(CountryConversionFunction[[inputconv]],CountryConversionFunction[[outputconv]])
+names(joinconversion)=c("tempxxname",outputconv)
+joined=join(convtable,joinconversion)
+colnames(joined)[which(colnames(joined)=="tempxxname")]=inputconv
+newjoined=subset(joined, select=c(1:which(colnames(joined)==inputconv),which(colnames(joined)==outputconv),(1+which(colnames(joined)==inputconv)):(ncol(joined)-1)))
+if(keep==FALSE){newjoined[[inputconv]]=NULL}
+write.csv(newjoined,file=paste(dir()[which(!grepl("Conversion",dir()))],"_Conversion.csv",sep=""),row.names=FALSE)
+}
+names(CountryConversionFunction) #Menu of conversions (use indices for function)
+dir()
+convertfunction(inputconv="FAO_Country",outputconv="ISO3",keep=FALSE)

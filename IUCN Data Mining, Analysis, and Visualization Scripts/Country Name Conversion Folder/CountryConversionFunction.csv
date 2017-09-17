@@ -1,0 +1,261 @@
+ISO3,ISO2,ISO_Numeric,FAO_Country,All_Species_Table,Reference_column_ignore,FAO_Region,IUCN_Region,FAO_Waste_Region_Former_Republics_Excluded,Continent_Former_Republics_Excluded,JMP_Map_Name,CIA_Name,FAO_Symboless_Name,World_Bank_Country,Yield_Groupings
+AFG,AF,4,Afghanistan,Afghanistan,Afghanistan,Asia,West & Central Asia,South Asia,Asia,Afghanistan,Afghanistan,Afghanistan,Afghanistan,Southern Asia
+ALB,AL,8,Albania,Albania,Albania,Europe,Europe,Europe,Europe,Albania,Albania,Albania,Albania,Southern and Eastern Europe
+DZA,DZ,12,Algeria,Algeria,Algeria,Africa,North Africa,North Africa,Africa,Algeria,Algeria,Algeria,Algeria,North Africa and Western Asia
+ASM,AS,16,American Samoa,AmericanSamoa,American Samoa,Oceania,Oceania,Unlisted,,,American Samoa,American_Samoa,American Samoa,
+AND,AD,20,Andorra,Andorra,Andorra,Europe,Europe,Unlisted,,,Andorra,Andorra,Andorra,
+AGO,AO,24,Angola,Angola,Angola,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Angola,Angola,Angola,Angola,Middle Africa
+AIA,AI,660,Anguilla,Anguilla,Anguilla,America,Caribbean Islands,Unlisted,,,Anguilla,Anguilla,,
+ATA,AQ,10,,Antarctica,Antarctica,,Antarctic,Unlisted,,,Antarctica,,,
+ATG,AG,28,Antigua and Barbuda,AntiguaandBarbuda,Antigua and Barbuda,America,Caribbean Islands,Latin America,South America,Antigua and Barbuda,Antigua and Barbuda,Antigua_and_Barbuda,Antigua and Barbuda,Caribbean and Central America
+ARG,AR,32,Argentina,Argentina,Argentina,America,South America,Latin America,South America,Argentina,Argentina,Argentina,Argentina,SE South America
+ARM,AM,51,Armenia,Armenia,Armenia,Asia,West & Central Asia,Former USSR,Former USSR,Armenia,Armenia,Armenia,Armenia,Former USSR
+ABW,AW,533,Aruba,Aruba,Aruba,America,Caribbean Islands,Unlisted,,,Aruba,Aruba,Aruba,
+AUS,AU,36,Australia,Australia,Australia,Oceania,Oceania,America and Oceania,America and Oceania,Australia,Australia,Australia,Australia,"North America, Australia, and New Zealand"
+AUT,AT,40,Austria,Austria,Austria,Europe,Europe,Europe,Europe,Austria,Austria,Austria,Austria,Northern and Western Europe
+AZE,AZ,31,Azerbaijan,Azerbaijan,Azerbaijan,Asia,West & Central Asia,Former USSR,Former USSR,Azerbaijan,Azerbaijan,Azerbaijan,Azerbaijan,Former USSR
+BHS,BS,44,Bahamas,Bahamas,Bahamas,America,Caribbean Islands,Latin America,South America,Bahamas,"Bahamas, The",Bahamas,"Bahamas, The",Caribbean and Central America
+BHR,BH,48,Bahrain,Bahrain,Bahrain,Asia,West & Central Asia,Unlisted,,,Bahrain,Bahrain,Bahrain,
+BGD,BD,50,Bangladesh,Bangladesh,Bangladesh,Asia,South & South East Asia,Southeast Asia,Asia,Bangladesh,Bangladesh,Bangladesh,Bangladesh,Southern Asia
+BRB,BB,52,Barbados,Barbados,Barbados,America,Caribbean Islands,Latin America,South America,Barbados,Barbados,Barbados,Barbados,Caribbean and Central America
+BLR,BY,112,Belarus,Belarus,Belarus,Europe,North Asia,Former USSR,Former USSR,Belarus,Belarus,Belarus,Belarus,Former USSR
+BEL,BE,56,Belgium,Belgium,Belgium,Europe,Europe,Europe,Europe,Belgium,Belgium,Belgium,Belgium,Northern and Western Europe
+BLZ,BZ,84,Belize,Belize,Belize,America,Mesoamerica,Latin America,South America,Belize,Belize,Belize,Belize,Caribbean and Central America
+BEN,BJ,204,Benin,Benin,Benin,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Benin,Benin,Benin,Benin,Western Africa
+BMU,BM,60,Bermuda,Bermuda,Bermuda,America,Caribbean Islands,Latin America,South America,Bermuda,Bermuda,Bermuda,Bermuda,"North America, Australia, and New Zealand"
+BTN,BT,64,Bhutan,Bhutan,Bhutan,Asia,South & South East Asia,Unlisted,,,Bhutan,Bhutan,Bhutan,
+BOL,BO,68,Bolivia (Plurinational State of),BoliviaPlurinationalStatesof,Bolivia,America,South America,Latin America,South America,Bolivia,Bolivia,Bolivia_Plurinational_State_of,Bolivia,Other South America
+BIH,BA,70,Bosnia and Herzegovina,BosniaandHerzegovina,Bosnia and Herzegovina,Europe,Europe,Former Yugoslavia,Former Yugoslavia,Bosnia and Herzegovina,Bosnia and Herzegovina,Bosnia_and_Herzegovina,Bosnia and Herzegovina,Former Yugoslavia
+BWA,BW,72,Botswana,Botswana,Botswana,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Botswana,Botswana,Botswana,Botswana,Southern Africa
+BRA,BR,76,Brazil,Brazil,Brazil,America,South America,Latin America,South America,Brazil,Brazil,Brazil,Brazil,SE South America
+IOT,IO,86,British Virgin Islands,BritishIndianOceanTerritory,British Indian Ocean Territory,America,South & South East Asia,Unlisted,,,British Indian Ocean Territory,,,
+BRN,BN,96,Brunei Darussalam,BruneiDarussalam,Brunei Darussalam,Asia,South & South East Asia,Southeast Asia,Asia,Brunei Darussalam,Brunei,Brunei_Darussalam,Brunei Darussalam,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+BGR,BG,100,Bulgaria,Bulgaria,Bulgaria,Europe,Europe,Europe,Europe,Bulgaria,Bulgaria,Bulgaria,Bulgaria,Southern and Eastern Europe
+BFA,BF,854,Burkina Faso,BurkinaFaso,Burkina Faso,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Burkina Faso,Burkina Faso,Burkina_Faso,Burkina Faso,Western Africa
+BDI,BI,108,Burundi,Burundi,Burundi,Africa,Sub-Saharan Africa,Unlisted,,,Burundi,Burundi,Burundi,
+KHM,KH,116,Cambodia,Cambodia,Cambodia,Africa,South & South East Asia,Southeast Asia,Asia,Cambodia,Cambodia,Cambodia,Cambodia,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+CMR,CM,120,Cameroon,Cameroon,Cameroon,Asia,Sub-Saharan Africa,SubSaharan Africa,Africa,Cameroon,Cameroon,Cameroon,Cameroon,Middle Africa
+CAN,CA,124,Canada,Canada,Canada,Africa,North America,America and Oceania,America and Oceania,Canada,Canada,Canada,Canada,"North America, Australia, and New Zealand"
+CPV,CV,132,Cabo Verde,CapeVerde,Cabo Verde,America,Sub-Saharan Africa,SubSaharan Africa,Africa,Cape Verde,Cabo Verde,Cabo_Verde,Cabo Verde,Western Africa
+CYM,KY,136,Cayman Islands,CaymanIslands,Cayman Islands,America,Caribbean Islands,Unlisted,,,Cayman Islands,Cayman_Islands,,
+CAF,CF,140,Central African Republic,CentralAfricanRepublic,Central African Republic,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Central African Republic,Central African Republic,Central_African_Republic,Central African Republic,Middle Africa
+TCD,TD,148,Chad,Chad,Chad,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Chad,Chad,Chad,Chad,Middle Africa
+,,,Channel Islands,,Channel Islands,Europe,,Unlisted,,,,,Channel Islands,
+CHL,CL,152,Chile,Chile,Chile,America,South America,Latin America,South America,Chile,Chile,Chile,Chile,SE South America
+HKG,HK,344,"China, Hong Kong SAR",HongKong,Hong Kong,Asia,East Asia,China,China,Hong Kong,Hong Kong,China_Hong_Kong_SAR,,China
+MAC,MO,446,"China, Macao SAR",Macao,Macau,Asia,East Asia,China,China,Macao,Macau,China_Macao_SAR,,China
+CHN,CN,156,"China, mainland",China,China,Asia,East Asia,China,China,China,China,China,China,China
+TWN,TW,158,"China, Taiwan Province of",TaiwanProvinceofChina,Taiwan,Asia,East Asia,China,China,Taiwan,Taiwan,China_Taiwan_Province_of,,China
+COL,CO,170,Colombia,Colombia,Colombia,America,South America,Latin America,South America,Colombia,Colombia,Colombia,Colombia,Other South America
+COM,KM,174,Comoros,Comoros,Comoros,Africa,Sub-Saharan Africa,Unlisted,,,Comoros,Comoros,Comoros,
+COG,CG,178,Congo,Congo,Congo,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,,"Congo, Republic of the",Congo,"Congo, Rep.",Middle Africa
+COK,CK,184,Cook Islands,CookIslands,Cook Islands,Oceania,Oceania,Unlisted,,,Cook Islands,Cook_Islands,,
+CRI,CR,188,Costa Rica,CostaRica,Costa Rica,America,Mesoamerica,Latin America,South America,Costa Rica,Costa Rica,Costa_Rica,Costa Rica,Caribbean and Central America
+CIV,CI,384,CŽte d'Ivoire,CtedIvoire,Cote d'Ivoire,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,CŽte d'Ivoire,Cote d'Ivoire,Cote_dIvoire,Cote d'Ivoire,
+HRV,HR,191,Croatia,Croatia,Croatia,Europe,Europe,Former Yugoslavia,Former Yugoslavia,Croatia,Croatia,Croatia,Croatia,Former Yugoslavia
+CUB,CU,192,Cuba,Cuba,Cuba,America,Caribbean Islands,Latin America,South America,Cuba,Cuba,Cuba,Cuba,Caribbean and Central America
+CYP,CY,196,Cyprus,Cyprus,Cyprus,Asia,West & Central Asia,Europe,Europe,Cyprus,Cyprus,Cyprus,Cyprus,North Africa and Western Asia
+CZE,CZ,203,Czech Republic,CzechRepublic,Czech Republic,Europe,Europe,Former Czech Republic,Former Czech Republic,Czech Republic,Czech Republic,Czech_Republic,Czech Republic,Former Czechoslovakia
+PRK,KP,408,Democratic People's Republic of Korea,KoreaDemocraticPeoplesRepublicof,North Korea,Asia,East Asia,Southeast Asia,Asia,Democratic People's Republic of Korea,"Korea, North",Democratic_Peoples_Republic_of_Korea,"Korea, Dem. Rep.",Eastern Asia
+COD,CD,180,Democratic Republic of the Congo,CongoTheDemocraticRepublicofthe,Democratic Republic of the Congo,Africa,Sub-Saharan Africa,Unlisted,,,"Congo, Democratic Republic of the",Democratic_Republic_of_the_Congo,"Congo, Dem. Rep.",
+DNK,DK,208,Denmark,Denmark,Denmark,Europe,Europe,Europe,Europe,Denmark,Denmark,Denmark,Denmark,Northern and Western Europe
+DJI,DJ,262,Djibouti,Djibouti,Djibouti,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Djibouti,Djibouti,Djibouti,Djibouti,East Africa
+DMA,DM,212,Dominica,Dominica,Dominica,America,Caribbean Islands,Latin America,South America,Dominica,Dominica,Dominica,Dominica,Caribbean and Central America
+DOM,DO,214,Dominican Republic,DominicanRepublic,Dominican Republic,America,Caribbean Islands,Latin America,South America,Dominican Republic,Dominican Republic,Dominican_Republic,Dominican Republic,Caribbean and Central America
+ECU,EC,218,Ecuador,Ecuador,Ecuador,America,South America,Latin America,South America,Ecuador,Ecuador,Ecuador,Ecuador,Other South America
+EGY,EG,818,Egypt,Egypt,Egypt,Africa,North Africa,North Africa,Africa,Egypt,Egypt,Egypt,"Egypt, Arab Rep.",North Africa and Western Asia
+SLV,SV,222,El Salvador,ElSalvador,El Salvador,America,Mesoamerica,Latin America,South America,El Salvador,El Salvador,El_Salvador,El Salvador,Caribbean and Central America
+GNQ,GQ,226,Equatorial Guinea,EquatorialGuinea,Equatorial Guinea,Africa,Sub-Saharan Africa,Unlisted,,,Equatorial Guinea,Equatorial_Guinea,Equatorial Guinea,
+ERI,ER,232,Eritrea,Eritrea,Eritrea,Africa,Sub-Saharan Africa,Unlisted,,,Eritrea,Eritrea,Eritrea,
+EST,EE,233,Estonia,Estonia,Estonia,Europe,Europe,Former USSR,Former USSR,Estonia,Estonia,Estonia,Estonia,Former USSR
+ETH,ET,231,Ethiopia,Ethiopia,Ethiopia,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Ethiopia,Ethiopia,Ethiopia,Ethiopia,East Africa
+FLK,FK,238,Falkland Islands (Malvinas),FalklandIslands,Falkland Islands,America,South America,Unlisted,,,Falkland Islands (Islas Malvinas),Falkland_Islands_Malvinas,,
+FRO,FO,234,Faroe Islands,FaroeIslands,Faroe Islands,Europe,Europe,Unlisted,,,Faroe Islands,Faroe_Islands,Faeroe Islands,
+FJI,FJ,242,Fiji,Fiji,Fiji,Oceania,Oceania,America and Oceania,America and Oceania,Fiji,Fiji,Fiji,Fiji,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+FIN,FI,246,Finland,Finland,Finland,Europe,Europe,Europe,Europe,Finland,Finland,Finland,Finland,Northern and Western Europe
+FRA,FR,250,France,France,France,Europe,Europe,Europe,Europe,France,France,France,France,Northern and Western Europe
+GUF,GF,254,French Guiana,FrenchGuiana,French Guiana,America,South America,Unlisted,,,French Guiana,French_Guiana,,
+PYF,PF,258,French Polynesia,FrenchPolynesia,French Polynesia,Oceania,Oceania,America and Oceania,America and Oceania,French Polynesia,French Polynesia,French_Polynesia,French Polynesia,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+GAB,GA,266,Gabon,Gabon,Gabon,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Gabon,Gabon,Gabon,Gabon,Middle Africa
+GMB,GM,270,Gambia,Gambia,Gambia,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Gambia,"Gambia, The",Gambia,"Gambia, The",Western Africa
+GEO,GE,268,Georgia,Georgia,Georgia,Asia,West & Central Asia,Former USSR,Former USSR,Georgia,Georgia,Georgia,Georgia,Former USSR
+DEU,DE,276,Germany,Germany,Germany,Europe,Europe,Europe,Europe,Germany,Germany,Germany,Germany,Northern and Western Europe
+GHA,GH,288,Ghana,Ghana,Ghana,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Ghana,Ghana,Ghana,Ghana,Western Africa
+GIB,GI,292,Gibraltar,Gibraltar,Gibraltar,Europe,Europe,Unlisted,,,Gibraltar,Gibraltar,,
+GRC,GR,300,Greece,Greece,Greece,Europe,Europe,Europe,Europe,Greece,Greece,Greece,Greece,Southern and Eastern Europe
+GRL,GL,304,Greenland,Greenland,Greenland,America,Europe,Unlisted,,,Greenland,Greenland,Greenland,
+GRD,GD,308,Grenada,Grenada,Grenada,America,Caribbean Islands,Latin America,South America,Grenada,Grenada,Grenada,Grenada,Caribbean and Central America
+GLP,GP,312,Guadeloupe,Guadeloupe,Guadeloupe,America,Caribbean Islands,Unlisted,,,Guadeloupe,Guadeloupe,,
+GUM,GU,316,Guam,Guam,Guam,Oceania,Oceania,Unlisted,,,Guam,Guam,Guam,
+GTM,GT,320,Guatemala,Guatemala,Guatemala,America,Mesoamerica,Latin America,South America,Guatemala,Guatemala,Guatemala,Guatemala,Caribbean and Central America
+GIN,GN,324,Guinea,Guinea,Guinea,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Guinea,Guinea,Guinea,Guinea,Western Africa
+GNB,GW,624,Guinea-Bissau,GuineaBissau,Guinea-Bissau,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Guinea-Bissau,GuineaBissau,Guinea_Bissau,Guinea-Bissau,Western Africa
+GUY,GY,328,Guyana,Guyana,Guyana,America,South America,Latin America,South America,Guyana,Guyana,Guyana,Guyana,Other South America
+HTI,HT,332,Haiti,Haiti,Haiti,America,Caribbean Islands,Latin America,South America,Haiti,Haiti,Haiti,Haiti,Caribbean and Central America
+VAT,VA,336,Holy See,HolySee,Holy See,Europe,Europe,Unlisted,,,Holy See (Vatican City),,,
+HND,HN,340,Honduras,Honduras,Honduras,America,Mesoamerica,Latin America,South America,Honduras,Honduras,Honduras,Honduras,Caribbean and Central America
+HUN,HU,348,Hungary,Hungary,Hungary,Europe,Europe,Europe,Europe,Hungary,Hungary,Hungary,Hungary,Southern and Eastern Europe
+ISL,IS,352,Iceland,Iceland,Iceland,Europe,Europe,Europe,Europe,Iceland,Iceland,Iceland,Iceland,Northern and Western Europe
+IND,IN,356,India,India,India,Asia,South & South East Asia,India,India,India,India,India,India,India
+IDN,ID,360,Indonesia,Indonesia,Indonesia,Asia,South & South East Asia,Southeast Asia,Asia,Indonesia,Indonesia,Indonesia,Indonesia,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+IRN,IR,364,Iran (Islamic Republic of),IranIslamicRepublicof,Iran,Asia,West & Central Asia,South Asia,Asia,Iran,Iran,Iran_Islamic_Republic_of,"Iran, Islamic Rep.",Southern Asia
+IRQ,IQ,368,Iraq,Iraq,Iraq,Asia,West & Central Asia,South Asia,Asia,Iraq,Iraq,Iraq,Iraq,North Africa and Western Asia
+IRL,IE,372,Ireland,Ireland,Ireland,Europe,Europe,Europe,Europe,Ireland,Ireland,Ireland,Ireland,Northern and Western Europe
+IMN,IM,833,Isle of Man,IsleofMan,Isle of Man,Europe,Europe,Unlisted,,,Isle of Man,Isle_of_Man,Isle of Man,
+ISR,IL,376,Israel,Israel,Israel,Asia,West & Central Asia,West Asia,Asia,Israel,Israel,Israel,Israel,North Africa and Western Asia
+ITA,IT,380,Italy,Italy,Italy,Europe,Europe,Europe,Europe,Italy,Italy,Italy,Italy,Southern and Eastern Europe
+JAM,JM,388,Jamaica,Jamaica,Jamaica,America,Caribbean Islands,Latin America,South America,Jamaica,Jamaica,Jamaica,Jamaica,Caribbean and Central America
+JPN,JP,392,Japan,Japan,Japan,Asia,East Asia,Industrialized Asia,Asia,Japan,Japan,Japan,Japan,Eastern Asia
+JOR,JO,400,Jordan,Jordan,Jordan,Asia,West & Central Asia,West Asia,Asia,Jordan,Jordan,Jordan,Jordan,North Africa and Western Asia
+KAZ,KZ,398,Kazakhstan,Kazakhstan,Kazakhstan,Asia,West & Central Asia,Former USSR,Former USSR,Kazakhstan,Kazakhstan,Kazakhstan,Kazakhstan,Former USSR
+KEN,KE,404,Kenya,Kenya,Kenya,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Kenya,Kenya,Kenya,Kenya,East Africa
+KIR,KI,296,Kiribati,Kiribati,Kiribati,Oceania,Oceania,America and Oceania,America and Oceania,Kiribati,Kiribati,Kiribati,Kiribati,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+KWT,KW,414,Kuwait,Kuwait,Kuwait,Asia,West & Central Asia,West Asia,Asia,Kuwait,Kuwait,Kuwait,Kuwait,North Africa and Western Asia
+KGZ,KG,417,Kyrgyzstan,Kyrgyzstan,Kyrgyzstan,Asia,West & Central Asia,Former USSR,Former USSR,Kyrgyzstan,Kyrgyzstan,Kyrgyzstan,Kyrgyz Republic,Former USSR
+LAO,LA,418,Lao People's Democratic Republic,LaoPeoplesDemocraticRepublic,Laos,Asia,South & South East Asia,Southeast Asia,Asia,Lao People's Democratic Republic,Laos,Lao_Peoples_Democratic_Republic,Lao PDR,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+LVA,LV,428,Latvia,Latvia,Latvia,Europe,Europe,Former USSR,Former USSR,Latvia,Latvia,Latvia,Latvia,Former USSR
+LBN,LB,422,Lebanon,Lebanon,Lebanon,Asia,West & Central Asia,North Africa,Africa,Lebanon,Lebanon,Lebanon,Lebanon,North Africa and Western Asia
+LSO,LS,426,Lesotho,Lesotho,Lesotho,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Lesotho,Lesotho,Lesotho,Lesotho,Southern Africa
+LBR,LR,430,Liberia,Liberia,Liberia,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Liberia,Liberia,Liberia,Liberia,Western Africa
+LBY,LY,434,Libya,Libya,Libya,Africa,North Africa,Unlisted,,Libya,Libya,Libya,Libya,
+LIE,LI,438,Liechtenstein,Liechtenstein,Liechtenstein,Europe,Europe,Unlisted,,,Liechtenstein,Liechtenstein,Liechtenstein,
+LTU,LT,440,Lithuania,Lithuania,Lithuania,Europe,Europe,Former USSR,Former USSR,Lithuania,Lithuania,Lithuania,Lithuania,Former USSR
+LUX,LU,442,Luxembourg,Luxembourg,Luxembourg,Europe,Europe,Europe,Europe,Luxembourg,Luxembourg,Luxembourg,Luxembourg,Northern and Western Europe
+MDG,MG,450,Madagascar,Madagascar,Madagascar,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Madagascar,Madagascar,Madagascar,Madagascar,East Africa
+MWI,MW,454,Malawi,Malawi,Malawi,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Malawi,Malawi,Malawi,Malawi,East Africa
+MYS,MY,458,Malaysia,Malaysia,Malaysia,Asia,South & South East Asia,Southeast Asia,Asia,Malaysia,Malaysia,Malaysia,Malaysia,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+MDV,MV,462,Maldives,Maldives,Maldives,Asia,South & South East Asia,South Asia,Asia,Maldives,Maldives,Maldives,Maldives,Southern Asia
+MLI,ML,466,Mali,Mali,Mali,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Mali,Mali,Mali,Mali,Western Africa
+MLT,MT,470,Malta,Malta,Malta,Europe,Europe,Europe,Europe,Malta,Malta,Malta,Malta,Southern and Eastern Europe
+MHL,MH,584,Marshall Islands,MarshallIslands,Marshall Islands,Oceania,Oceania,Unlisted,,,Marshall Islands,Marshall_Islands,Marshall Islands,
+MTQ,MQ,474,Martinique,Martinique,Martinique,America,Caribbean Islands,Unlisted,,,Martinique,Martinique,,
+MRT,MR,478,Mauritania,Mauritania,Mauritania,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Mauritania,Mauritania,Mauritania,Mauritania,Western Africa
+MUS,MU,480,Mauritius,Mauritius,Mauritius,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Mauritius,Mauritius,Mauritius,Mauritius,East Africa
+MYT,YT,175,Mayotte,Mayotte,Mayotte,Africa,Sub-Saharan Africa,Unlisted,,,Mayotte,Mayotte,,
+MEX,MX,484,Mexico,Mexico,Mexico,America,Mesoamerica,Latin America,South America,Mexico,Mexico,Mexico,Mexico,Caribbean and Central America
+FSM,FM,583,Micronesia (Federated States of),MicronesiaFederatedStatesof,Federated States of Micronesia,Oceania,Oceania,Unlisted,,,"Micronesia, Federated States of",Micronesia_Federated_States_of,,
+MCO,MC,492,Monaco,Monaco,Monaco,Europe,Europe,Unlisted,,,Monaco,Monaco,Monaco,
+MNG,MN,496,Mongolia,Mongolia,Mongolia,Asia,East Asia,West Asia,Asia,Mongolia,Mongolia,Mongolia,Mongolia,Eastern Asia
+MNE,ME,499,Montenegro,Montenegro,Montenegro,Europe,Europe,Former Yugoslavia,Former Yugoslavia,Montenegro,Montenegro,Montenegro,Montenegro,Former Yugoslavia
+MSR,MS,500,Montserrat,Montserrat,Montserrat,America,Caribbean Islands,Unlisted,,,Montserrat,Montserrat,,
+MAR,MA,504,Morocco,Morocco,Morocco,Africa,North Africa,North Africa,Africa,Morocco,Morocco,Morocco,Morocco,North Africa and Western Asia
+MOZ,MZ,508,Mozambique,Mozambique,Mozambique,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Mozambique,Mozambique,Mozambique,Mozambique,East Africa
+MMR,MM,104,Myanmar,Myanmar,Myanmar,Asia,South & South East Asia,Southeast Asia,Asia,Myanmar,Burma,Myanmar,Myanmar,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+NAM,NA,516,Namibia,Namibia,Namibia,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Namibia,Namibia,Namibia,Namibia,Southern Africa
+NRU,NR,520,Nauru,Nauru,Nauru,Oceania,Oceania,Unlisted,,,Nauru,Nauru,,
+NPL,NP,524,Nepal,Nepal,Nepal,Asia,South & South East Asia,South Asia,Asia,Nepal,Nepal,Nepal,Nepal,Southern Asia
+NLD,NL,528,Netherlands,Netherlands,Netherlands,Europe,Europe,Europe,Europe,Netherlands,Netherlands,Netherlands,Netherlands,Northern and Western Europe
+NCL,NC,540,New Caledonia,NewCaledonia,New Caledonia,Oceania,Oceania,America and Oceania,America and Oceania,New Caledonia,New Caledonia,New_Caledonia,New Caledonia,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+NZL,NZ,554,New Zealand,NewZealand,New Zealand,Oceania,Oceania,America and Oceania,America and Oceania,New Zealand,New Zealand,New_Zealand,New Zealand,"North America, Australia, and New Zealand"
+NIC,NI,558,Nicaragua,Nicaragua,Nicaragua,America,Mesoamerica,Latin America,South America,Nicaragua,Nicaragua,Nicaragua,Nicaragua,Caribbean and Central America
+NER,NE,562,Niger,Niger,Niger,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Niger,Niger,Niger,Niger,Western Africa
+NGA,NG,566,Nigeria,Nigeria,Nigeria,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Nigeria,Nigeria,Nigeria,Nigeria,Western Africa
+NIU,NU,570,Niue,Niue,Niue,Oceania,Oceania,Unlisted,,,Niue,Niue,,
+NFK,NF,574,Norfolk Island,NorfolkIsland,Norfolk Island,Oceania,Oceania,Unlisted,,,Norfolk Island,Norfolk_Island,,
+MNP,MP,580,Northern Mariana Islands,NorthernMarianaIslands,Northern Mariana Islands,Oceania,Oceania,Unlisted,,,Northern Mariana Islands,Northern_Mariana_Islands,Northern Mariana Islands,
+NOR,NO,578,Norway,Norway,Norway,Europe,Europe,Europe,Europe,Norway,Norway,Norway,Norway,Northern and Western Europe
+PSE,PS,275,Occupied Palestinian Territory,PalestinianTerritoryOccupied,Palistinian Territories,Asia,West & Central Asia,Unlisted,,Occupied Palestinian Territory,Gaza Strip,Occupied_Palestinian_Territory,,
+OMN,OM,512,Oman,Oman,Oman,Asia,West & Central Asia,Former Yugoslavia,Former Yugoslavia,,Oman,Oman,Oman,North Africa and Western Asia
+PAK,PK,586,Pakistan,Pakistan,Pakistan,Asia,West & Central Asia,South Asia,Asia,Pakistan,Pakistan,Pakistan,Pakistan,Southern Asia
+PLW,PW,585,Palau,Palau,Palau,Oceania,Oceania,Unlisted,,,Palau,Palau,Palau,
+PAN,PA,591,Panama,Panama,Panama,America,Mesoamerica,Latin America,South America,Panama,Panama,Panama,Panama,Caribbean and Central America
+PNG,PG,598,Papua New Guinea,PapuaNewGuinea,Papua New Guinea,Oceania,Oceania,Unlisted,,,Papua New Guinea,Papua_New_Guinea,Papua New Guinea,
+PRY,PY,600,Paraguay,Paraguay,Paraguay,America,South America,Latin America,South America,Paraguay,Paraguay,Paraguay,Paraguay,Other South America
+PER,PE,604,Peru,Peru,Peru,America,South America,Latin America,South America,Peru,Peru,Peru,Peru,Other South America
+PHL,PH,608,Philippines,Philippines,Philippines,Asia,South & South East Asia,Southeast Asia,Asia,Philippines,Philippines,Philippines,Philippines,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+PCN,PN,612,Pitcairn Islands,Pitcairn,Pitcairn,Oceania,Oceania,Unlisted,,,Pitcairn Islands,Pitcairn_Islands,,
+POL,PL,616,Poland,Poland,Poland,Europe,Europe,Europe,Europe,Poland,Poland,Poland,Poland,Southern and Eastern Europe
+PRT,PT,620,Portugal,Portugal,Portugal,Europe,Europe,Europe,Europe,Portugal,Portugal,Portugal,Portugal,Southern and Eastern Europe
+PRI,PR,630,Puerto Rico,PuertoRico,Puerto Rico,America,Caribbean Islands,Unlisted,,,Puerto Rico,Puerto_Rico,Puerto Rico,
+QAT,QA,634,Qatar,Qatar,Qatar,Asia,West & Central Asia,Unlisted,,,Qatar,Qatar,Qatar,
+KOR,KR,410,Republic of Korea,KoreaRepublicof,South Korea,Asia,East Asia,Industrialized Asia,Asia,Republic of Korea,"Korea, South",Republic_of_Korea,"Korea, Rep.",Eastern Asia
+MDA,MD,498,Republic of Moldova,Moldova,Moldova,Europe,North Asia,Europe,Europe,Republic of Moldova,Moldova,Republic_of_Moldova,Moldova,Southern and Eastern Europe
+REU,RE,638,R_union,Runion,Reunion,Africa,Sub-Saharan Africa,Unlisted,,,Reunion,Reunion,,
+ROU,RO,642,Romania,Romania,Romania,Europe,Europe,Europe,Europe,Romania,Romania,Romania,Romania,Southern and Eastern Europe
+RUS,RU,643,Russian Federation,RussianFederation,Russian Federation,Europe,North Asia,Former USSR,Former USSR,Russian Federation,Russia,Russian_Federation,Russian Federation,Former USSR
+RWA,RW,646,Rwanda,Rwanda,Rwanda,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Rwanda,Rwanda,Rwanda,Rwanda,East Africa
+SHN,SH,654,"Saint Helena, Ascension and Tristan da Cunha",SaintHelenaAscensionandTristandaCunha,Saint Helena Ascension and Tristan da Cunha,Africa,Sub-Saharan Africa,Unlisted,,,"Saint Helena, Ascension, and Tristan da Cunha",Saint_Helena_Ascension_and_Tristan_da_Cunha,,
+KNA,KN,659,Saint Kitts and Nevis,SaintKittsandNevis,St. Kitts and Nevis,America,Caribbean Islands,Latin America,South America,Saint Kitts and Nevis,Saint Kitts and Nevis,Saint_Kitts_and_Nevis,St. Kitts and Nevis,Caribbean and Central America
+LCA,LC,662,Saint Lucia,SaintLucia,St. Lucia,America,Caribbean Islands,Latin America,South America,Saint Lucia,Saint Lucia,Saint_Lucia,St. Lucia,Caribbean and Central America
+SPM,PM,666,Saint Pierre and Miquelon,SaintPierreandMiquelon,Saint Pierre and Miquelon,America,North America,Unlisted,,,Saint Pierre and Miquelon,Saint_Pierre_and_Miquelon,,
+VCT,VC,670,Saint Vincent and the Grenadines,SaintVincentandtheGrenadines,St. Vincent and the Grenadines,America,Caribbean Islands,Latin America,South America,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,Saint_Vincent_and_the_Grenadines,St. Vincent and the Grenadines,Caribbean and Central America
+WSM,WS,882,Samoa,Samoa,Samoa,Oceania,Oceania,America and Oceania,America and Oceania,Samoa,Samoa,Samoa,Samoa,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+SMR,SM,674,San Marino,SanMarino,San Marino,Europe,Europe,Unlisted,,,San Marino,San_Marino,San Marino,
+STP,ST,678,Sao Tome and Principe,SaoTomandPrincipe,Sao Tome and Principe,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Sao Tome and Principe,Sao Tome and Principe,Sao_Tome_and_Principe,Sao Tome and Principe,Middle Africa
+SAU,SA,682,Saudi Arabia,SaudiArabia,Saudi Arabia,Asia,West & Central Asia,West Asia,Asia,Saudi Arabia,Saudi Arabia,Saudi_Arabia,Saudi Arabia,North Africa and Western Asia
+SEN,SN,686,Senegal,Senegal,Senegal,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Senegal,Senegal,Senegal,Senegal,Western Africa
+SRB,RS,688,Serbia,Serbia,Serbia,Europe,Europe,Former Yugoslavia,Former Yugoslavia,Serbia,Serbia,Serbia,Serbia,Former Yugoslavia
+SYC,SC,690,Seychelles,Seychelles,Seychelles,Africa,Sub-Saharan Africa,Unlisted,,,Seychelles,Seychelles,Seychelles,
+SLE,SL,694,Sierra Leone,SierraLeone,Sierra Leone,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Sierra Leone,Sierra Leone,Sierra_Leone,Sierra Leone,Western Africa
+SGP,SG,702,Singapore,Singapore,Singapore,Asia,South & South East Asia,Unlisted,,,Singapore,Singapore,Singapore,
+SVK,SK,703,Slovakia,Slovakia,Slovak Republic,Europe,Europe,Former Czech Republic,Former Czech Republic,Slovakia,Slovakia,Slovakia,Slovak Republic,Former Czechoslovakia
+SVN,SI,705,Slovenia,Slovenia,Slovenia,Europe,Europe,Former Yugoslavia,Former Yugoslavia,Slovenia,Slovenia,Slovenia,Slovenia,Former Yugoslavia
+SLB,SB,90,Solomon Islands,SolomonIslands,Solomon Islands,Oceania,Oceania,Southeast Asia,Asia,Solomon Islands,Solomon Islands,Solomon_Islands,Solomon Islands,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+SOM,SO,706,Somalia,Somalia,Somalia,Africa,Sub-Saharan Africa,Unlisted,,Somalia,Somalia,Somalia,Somalia,
+ZAF,ZA,710,South Africa,SouthAfrica,South Africa,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,South Africa,South Africa,South_Africa,South Africa,Southern Africa
+SSD,SS,728,South Sudan,SouthSudan,South Sudan,Africa,Sub-Saharan Africa,Unlisted,,South Sudan,South Sudan,South_Sudan,South Sudan,
+ESP,ES,724,Spain,Spain,Spain,Europe,Europe,Europe,Europe,Spain,Spain,Spain,Spain,Southern and Eastern Europe
+LKA,LK,144,Sri Lanka,SriLanka,Sri Lanka,Asia,South & South East Asia,South Asia,Asia,Sri Lanka,Sri Lanka,Sri_Lanka,Sri Lanka,Southern Asia
+SDN,SD,736,Sudan,Sudan,Sudan,Africa,Sub-Saharan Africa,Unlisted,,Sudan,Sudan,Sudan,Sudan,
+SUR,SR,740,Suriname,Suriname,Suriname,America,South America,Latin America,South America,Suriname,Suriname,Suriname,Suriname,Other South America
+SJM,SJ,744,Svalbard and Jan Mayen Islands,SvalbardandJanMayen,Svalbard and Jan Mayen,Europe,Europe,Unlisted,,,Svalbard,Svalbard_and_Jan_Mayen_Islands,,
+SWZ,SZ,748,Swaziland,Swaziland,Swaziland,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Swaziland,Swaziland,Swaziland,Swaziland,Southern Africa
+SWE,SE,752,Sweden,Sweden,Sweden,Europe,Europe,Europe,Europe,Sweden,Sweden,Sweden,Sweden,Northern and Western Europe
+CHE,CH,756,Switzerland,Switzerland,Switzerland,Europe,Europe,Europe,Europe,Switzerland,Switzerland,Switzerland,Switzerland,Northern and Western Europe
+SYR,SY,760,Syrian Arab Republic,SyrianArabRepublic,Syria,Asia,West & Central Asia,Unlisted,,Syrian Arab Republic,Syria,Syrian_Arab_Republic,Syrian Arab Republic,
+TJK,TJ,762,Tajikistan,Tajikistan,Tajikistan,Asia,West & Central Asia,Former USSR,Former USSR,Tajikistan,Tajikistan,Tajikistan,Tajikistan,Former USSR
+THA,TH,764,Thailand,Thailand,Thailand,Asia,South & South East Asia,Southeast Asia,Asia,Thailand,Thailand,Thailand,Thailand,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+MKD,MK,807,The former Yugoslav Republic of Macedonia,MacedoniatheformerYugoslavRepublicof,Macedonia,Europe,Europe,Former Yugoslavia,Former Yugoslavia,Macedonia,Macedonia,The_former_Yugoslav_Republic_of_Macedonia,"Macedonia, FYR",Former Yugoslavia
+TLS,TL,626,Timor-Leste,TimorLeste,Timor-Leste,Asia,South & South East Asia,Southeast Asia,Asia,Timor-Leste,TimorLeste,Timor_Leste,Timor-Leste,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+TGO,TG,768,Togo,Togo,Togo,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Togo,Togo,Togo,Togo,Western Africa
+TKL,TK,772,Tokelau,Tokelau,Tokelau,Oceania,Oceania,Unlisted,,,Tokelau,Tokelau,,
+TON,TO,776,Tonga,Tonga,Tonga,Oceania,Oceania,Unlisted,,,Tonga,Tonga,Tonga,
+TTO,TT,780,Trinidad and Tobago,TrinidadandTobago,Trinidad and Tobago,America,Caribbean Islands,Latin America,South America,Trinidad and Tobago,Trinidad and Tobago,Trinidad_and_Tobago,Trinidad and Tobago,Caribbean and Central America
+TUN,TN,788,Tunisia,Tunisia,Tunisia,Africa,North Africa,North Africa,Africa,Tunisia,Tunisia,Tunisia,Tunisia,North Africa and Western Asia
+TUR,TR,792,Turkey,Turkey,Turkey,Asia,West & Central Asia,West Asia,Asia,Turkey,Turkey,Turkey,Turkey,North Africa and Western Asia
+TKM,TM,795,Turkmenistan,Turkmenistan,Turkmenistan,Asia,West & Central Asia,Former USSR,Former USSR,Turkmenistan,Turkmenistan,Turkmenistan,Turkmenistan,Former USSR
+TCA,TC,796,Turks and Caicos Islands,TurksandCaicosIslands,Turks and Caicos Islands,America,Caribbean Islands,Unlisted,,,Turks and Caicos Islands,Turks_and_Caicos_Islands,Turks and Caicos Islands,
+TUV,TV,798,Tuvalu,Tuvalu,Tuvalu,Oceania,Oceania,Unlisted,,,Tuvalu,Tuvalu,Tuvalu,
+UGA,UG,800,Uganda,Uganda,Uganda,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Uganda,Uganda,Uganda,Uganda,East Africa
+UKR,UA,804,Ukraine,Ukraine,Ukraine,Europe,North Asia,Former Czech Republic,Former Czech Republic,Ukraine,Ukraine,Ukraine,Ukraine,Former USSR
+ARE,AE,784,United Arab Emirates,UnitedArabEmirates,United Arab Emirates,Asia,West & Central Asia,West Asia,Asia,United Arab Emirates,United Arab Emirates,United_Arab_Emirates,United Arab Emirates,North Africa and Western Asia
+GBR,GB,826,United Kingdom,UnitedKingdom,United Kingdom,Europe,Europe,Europe,Europe,United Kingdom,United Kingdom,United_Kingdom,United Kingdom,Northern and Western Europe
+TZA,TZ,834,United Republic of Tanzania,TanzaniaUnitedRepublicof,Tanzania,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Tanzania,Tanzania,United_Republic_of_Tanzania,Tanzania,East Africa
+USA,US,840,United States of America,UnitedStates,United States,America,North America,America and Oceania,America and Oceania,United States of America,United States,United_States_of_America,United States,"North America, Australia, and New Zealand"
+VIR,VI,850,United States Virgin Islands,VirginIslandsUS,Virgin Islands (U.S.),America,Carribean Islands,Unlisted,,,Virgin Islands,United_States_Virgin_Islands,Virgin Islands (U.S.),
+URY,UY,858,Uruguay,Uruguay,Uruguay,America,South America,Latin America,South America,Uruguay,Uruguay,Uruguay,Uruguay,SE South America
+UZB,UZ,860,Uzbekistan,Uzbekistan,Uzbekistan,Asia,West & Central Asia,Former USSR,Former USSR,Uzbekistan,Uzbekistan,Uzbekistan,Uzbekistan,Former USSR
+VUT,VU,548,Vanuatu,Vanuatu,Vanuatu,Oceania,Oceania,America and Oceania,America and Oceania,Vanuatu,Vanuatu,Vanuatu,Vanuatu,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+VEN,VE,862,Venezuela (Bolivarian Republic of),VenezuelaBolivarianRepublicof,Venezuela,America,South America,Latin America,South America,Venezuela,Venezuela,Venezuela_Bolivarian_Republic_of,"Venezuela, RB",Other South America
+VNM,VN,704,Viet Nam,VietNam,Vietnam,Asia,South & South East Asia,Southeast Asia,Asia,Viet Nam,Vietnam,Viet_Nam,Vietnam,Southeast Asia and the Nesia's (Mela/Micro/Poly)
+WLF,WF,876,Wallis and Futuna Islands,WallisandFutuna,Wallis and Futuna,Oceania,Oceania,Unlisted,,,Wallis and Futuna,Wallis_and_Futuna_Islands,,
+ESH,EH,732,Western Sahara,WesternSahara,Western Sahara,Africa,North Africa,Unlisted,,,Western Sahara,Western_Sahara,,
+YEM,YE,887,Yemen,Yemen,Yemen,Asia,West & Central Asia,West Asia,Asia,Yemen,Yemen,Yemen,"Yemen, Rep.",North Africa and Western Asia
+ZMB,ZM,894,Zambia,Zambia,Zambia,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Zambia,Zambia,Zambia,Zambia,East Africa
+ZWE,ZW,716,Zimbabwe,Zimbabwe,Zimbabwe,Africa,Sub-Saharan Africa,SubSaharan Africa,Africa,Zimbabwe,Zimbabwe,Zimbabwe,Zimbabwe,East Africa
+ALA,AX,248,,landIslands,Aland Islands,,Europe,Unlisted,,,,,,
+UMI,UM,581,,UnitedStatesMinorOutlyingIslands,United States Minor Outlying Islands,,Oceania,Unlisted,,,United States Minor Outlying Islands,,,
+VGB,VG,92,,VirginIslandsBritish,British Virgin Islands,America,Caribbean Islands,Unlisted,,,British Virgin Islands,British_Virgin_Islands,,
+BLM,BL,652,,SaintBarthlemy,Saint Barthelemy,,Caribbean Islands,Unlisted,,,Saint Barthelemy,,,
+MAF,MF,663,,SaintMartin,St. Martin,,Caribbean Islands,Unlisted,,,Saint Martin,,,
+SXM,SX,534,,SintMaarten,Sint Maarten,,Caribbean Islands,Unlisted,,,Sint Maarten,,,
+SGS,GS,239,,SouthGeorgiaandtheSouthSandwichIslands,South Georgia and the South Sandwich Islands,,Antarctic,Unlisted,,,South Georgia and the Islands,,,
+CUW,CW,531,,Curaao,Curacao,,Caribbean Islands,Unlisted,,,Curacao,,,
+ATF,TF,260,,FrenchSouthernTerritories,French Southern Territories,,Antarctic,Unlisted,,,French Southern and Antarctic Lands,,,
+JEY,JE,832,,Jersey,Jersey,,Europe,Unlisted,,,Jersey,,,
+HMD,HM,334,,HeardIslandandMcDonaldIslands,Heard Island and McDonald Islands,,Antarctic,Unlisted,,,Heard Island and McDonald Islands,,,
+GGY,GG,831,,Guernsey,Guernsey,,Europe,Unlisted,,,Guernsey,,,
+BES,BQ,535,,BonaireSintEustatiusandSaba,Bonaire,,Caribbean Islands,Unlisted,,,,,,
+CCK,CC,166,,CocosIslands,Cocos (Keeling) Island,,Oceania,Unlisted,,,Cocos (Keeling) Islands,,,
+BVT,BV,74,,BouvetIsland,Bouvet Island,,Antarctic,Unlisted,,,Bouvet Island,,,
+CXR,CX,162,,ChristmasIsland,Christmas Island,,Oceania,Unlisted,,,Christmas Island,,,
+,,,,,Spratly Islands and Paracel Island,,,Unlisted,,,,,,
+ZZZ,,,Sudan (former),Sudanformer,NOTE THIS ISO CODE IS MADE UP TO KEEP SUDAN IN DATASET,,,SubSaharan Africa,Africa,Sudan (former),,,,North Africa and Western Asia
+,,,Belgium-Luxembourg,,Note: old country with FAO data find suitable match,,,Europe,Europe,Belgium-Luxembourg,,,,
+,,,China,,Note: old country with FAO data,,,Unlisted,,China,,,,
+,,,Czechoslovakia,,Note: old country with FAO data,,,Former Czech Republic,Former Czech Republic,Czechoslovakia,,,,
+,,,Ethiopia PDR,,Note: old country with FAO data,,,SubSaharan Africa,Africa,Ethiopia PDR,,,,
+,,,Netherlands Antilles,,Note: old country with FAO data,,,Latin America,South America,Netherlands Antilles,,,,
+,,,Serbia and Montenegro,,Note: old country with FAO data,,,Former Yugoslavia,Former Yugoslavia,Serbia and Montenegro,,,,
+,,,USSR,,Note: old country with FAO data,,,Former USSR,Former USSR,USSR,,,,
+,,,Yugoslav SFR,,Note: old country with FAO data,,,Former Yugoslavia,Former Yugoslavia,Yugoslav SFR,,,,
