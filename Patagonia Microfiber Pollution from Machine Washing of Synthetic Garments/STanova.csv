@@ -1,0 +1,14 @@
+Formula,Term of interest
+scaledfibermasscomb~type,type
+scaledfibermasscomb~load+type,type
+scaledfibermasscomb~load+age+type,type
+scaledfibermasscomb~type+load+age+type*load,type*load
+scaledfibermasscomb~type+load+age+type*age,type*age
+scaledfibermasscomb~type+load+age+load*age,load*age
+scaledfibermass~load+age+filtersize+type,type
+scaledfibermass~load+age+filtersize+type+type*filtersize,type*filtersize
+scaledfibermass~filtersize+type+type*filtersize,type*filtersize
+scaledfibermass~load+age+filtersize+type+age*filtersize,age*filtersize
+scaledfibermass~age+filtersize+age*filtersize,age*filtersize
+scaledfibermass~load+age+filtersize+type+load*filtersize,load*filtersize
+scaledfibermass~load+filtersize+load*filtersize,load*filtersize
