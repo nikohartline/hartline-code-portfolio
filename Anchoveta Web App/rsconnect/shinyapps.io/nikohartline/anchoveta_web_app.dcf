@@ -1,0 +1,10 @@
+name: anchoveta_web_app
+title:
+username:
+account: nikohartline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 215505
+bundleId: 984783
+url: https://nikohartline.shinyapps.io/anchoveta_web_app/
+when: 1505609856.51767

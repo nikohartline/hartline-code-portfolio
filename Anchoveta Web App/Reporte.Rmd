@@ -1,0 +1,181 @@
+---
+output: pdf_document
+---
+```{r Fecha, eval = T, echo = F}
+fecha <- date()
+autor <- input$autor
+```
+
+---
+title: "Reporte Final"
+author: "Herramienta de Proyección, Anchoveta (`r autor`)"
+date: "`r fecha`"
+output: pdf_document
+---
+
+# Intrucciones 
+El siguiente Reporte comprende los resultados arrojados por la herramienta de proyeción de Anchoveta. Los resultados están divididos en tres partes, la primera (Resumen General) que incluye un resumen general de los dos sectores (Captura y Procesamiento), la segunda parte muestra los resultados generales más/menos 1 y 5 % del LMCT destinado a la flota CHD y la tercera parte comprende los resultados del procesamiento de la anchoveta. 
+
+# Parte 1, Resumen General
+
+A continuación se muestran los resultados de producción, valor económico, y empleos creados en la pesca y en el procesamiento de Anchoveta. Los resultados se presentan en dos de los cuatro escenarios de la herramienta (Status Quo y Cuota Mercado Cerrado). 
+
+```{r TAC,comment=NA, eval=T, echo=F, message=F, warning=F}
+
+AlphaSet=alphaZero
+AlphaSetText <- AlphaSet[1]*100
+TACSet=TAC #pulls the variable out of the current reactive input. (since the rmarkdown does not need to be a reactive variable)
+```
+
+Los resultados aquí mostrados son referentes a una cuota (LMCT) de **`r TACSet`** millones de toneladas, de las cuales **`r AlphaSetText`%** son destinadas a la flota artesanal.
+
+
+```{r Resumen, eval=T, echo=F, message=F, warning=F, fig.height=5, fig.width=7}
+suppressWarnings(library(ggplot2))
+suppressWarnings(library(knitr))
+suppressWarnings(library(cowplot))
+
+#following code creates a plot using the ResumenGeneral() reactive table with summary numbers of the fishery and processing sectors
+
+PLOTME1=ggplot(data=ResumenGeneral(), aes(x=Sector,y=Production,fill=Sector)) +
+    geom_bar(stat="identity",position="dodge",color="black",show.legend=F,width=.7)+
+    facet_grid(.~Escenario)+ #Cambio Renato
+    ggtitle(NULL)+
+    ylab('Captura y\n Producción')+
+    geom_text(aes(label = round(Production,0),
+                  y = Production,
+              size = 2),vjust=-0.3,position = position_dodge(width = 1),show.legend=F)+
+    ylim(0,max(ResumenGeneral()$Production)*1.2)+
+    xlab(NULL)+
+    scale_x_discrete(breaks=c("Fishery","Processing"),labels=c("Captura","Procesamiento"))+
+    theme(axis.title.y=element_text(size=2),axis.text.y =element_text(size=2))+
+    theme_bw()
+PLOTME2=ggplot(data=ResumenGeneral(), aes(x=Sector,y=Profit,fill=Sector)) +
+      geom_bar(stat="identity",position="dodge",color="black",show.legend=F,width=.7)+
+      facet_grid(.~Escenario)+
+      ggtitle(NULL)+
+      ylab('Valor \nEconómico')+
+      geom_text(aes(label = round(Profit,0),
+                    y = Profit,
+                    size = 2),vjust=-0.3,position = position_dodge(width = 1),show.legend=F)+
+      ylim(0,max(ResumenGeneral()$Profit)*1.2)+
+      xlab(NULL)+
+      scale_x_discrete(breaks=c("Fishery","Processing"),labels=c("Captura","Procesamiento"))+
+      theme(axis.title.y=element_text(size=2))+
+      theme_bw()
+PLOTME3=ggplot(data=ResumenGeneral(), aes(x=Sector,y=Labor,fill=Sector)) +
+      geom_bar(stat="identity",position="dodge",color="black",show.legend=F,width=.7)+
+      facet_grid(.~Escenario)+
+      ggtitle(NULL)+
+      ylab('Puestos de\n Trabajo')+
+      geom_text(aes(label = round(Labor,0),
+                    y = Labor,
+                    size = 2),vjust=-0.3,position = position_dodge(width = 1),show.legend=F)+
+      ylim(0,max(ResumenGeneral()$Labor)*1.2)+
+      xlab(NULL)+
+      scale_x_discrete(breaks=c("Fishery","Processing"),labels=c("Captura","Procesamiento"))+
+      theme(axis.title.y=element_text(size=2))+
+      theme_bw()
+
+
+plot_grid(PLOTME1, PLOTME2,PLOTME3, ncol=1, align="v")
+
+```
+Producción en millones de toneladas, valor en millones de USD, y empleo en puestos de trabajo.
+
+\pagebreak
+
+# Parte 2, Valores generales bajo distintos escenarios
+La siguiente sección muestra los valores generales de producción, valor económico y empleo para el escenario de Cuota Mercado Cerrado (MC) en tres distintas presentaciones: 
+
+1) Elegido: La asignación de cuota artesanal elegida por el usuario
+2) Mas/Menos 1%: 1% más y 1% menos de cuota para la flota artesanal (sobre los parámetros elegidos) 
+3) Mas/Menos 5%: 5% más y 5% menos de cuota para la flota artesanal (sobre los parámetros elegidos )
+
+```{r Resumen(b), eval=T, echo=F,comment=NA, message=F, warning=F, fig.height=3, fig.width=7}
+suppressWarnings(library(knitr))
+suppressWarnings(library(pander))
+
+AlphaRange=c(.01,.05)
+
+AlphaSet=alphaZero
+aSet=a
+bSet=b
+marg.costSet=marg.cost
+TACSet=TAC
+betaZeroSet=betaZero
+capSet=cap
+crewSet=crew
+pctgSet=isolate(pctg())
+disc1Set=isolate(disc1())
+disc2Set=isolate(disc2()) #removes reactiveness from variables of interest
+
+
+#following table is the menos 5%, menos 1%, initial, mas 1%, y mas 5% scenarios for each of evaluations of the fishery.
+scenariotable<-list(N2=singleEvaluation(aSet,bSet,marg.costSet,TACSet,c(pmax(AlphaSet[1]-AlphaRange[2],0),AlphaSet[2]+AlphaRange[2]),betaZeroSet,capSet,crewSet,pctgSet,disc1Set,disc2Set)[1:2,],N1=singleEvaluation(aSet,bSet,marg.costSet,TACSet,c(pmax(AlphaSet[1]-AlphaRange[1],0),AlphaSet[2]+AlphaRange[1]),betaZeroSet,capSet,crewSet,pctgSet,disc1Set,disc2Set)[1:2,],INITIAL=singleEvaluation(aSet,bSet,marg.costSet,TACSet,AlphaSet,betaZeroSet,capSet,crewSet,pctgSet,disc1Set,disc2Set)[1:2,],P1=singleEvaluation(aSet,bSet,marg.costSet,TACSet,c(AlphaSet[1]+AlphaRange[1],AlphaSet[2]-AlphaRange[1]),betaZeroSet,capSet,crewSet,pctgSet,disc1Set,disc2Set)[1:2,],P2=singleEvaluation(aSet,bSet,marg.costSet,TACSet,c(AlphaSet[1]+AlphaRange[2],AlphaSet[2]-AlphaRange[2]),betaZeroSet,capSet,crewSet,pctgSet,disc1Set,disc2Set)[1:2,])
+
+D1=data.frame(N2 = c(scenariotable[[1]]$Value_I[2],scenariotable[[1]]$Value_A[2],scenariotable[[1]]$Value_I[2]+scenariotable[[1]]$Value_A[2],scenariotable[[1]]$Labor_I[2],scenariotable[[1]]$Labor_A[2],scenariotable[[1]]$Labor_I[2]+scenariotable[[1]]$Labor_A[2]),
+                         N1 = c(scenariotable[[2]]$Value_I[2],scenariotable[[2]]$Value_A[2],scenariotable[[2]]$Value_I[2]+scenariotable[[2]]$Value_A[2],scenariotable[[2]]$Labor_I[2],scenariotable[[2]]$Labor_A[2],scenariotable[[2]]$Labor_I[2]+scenariotable[[2]]$Labor_A[2]),
+                         INITIAL = c(scenariotable[[3]]$Value_I[2],scenariotable[[3]]$Value_A[2],scenariotable[[3]]$Value_I[2]+scenariotable[[3]]$Value_A[2],scenariotable[[3]]$Labor_I[2],scenariotable[[3]]$Labor_A[2],scenariotable[[3]]$Labor_I[2]+scenariotable[[3]]$Labor_A[2]),
+                         P1 = c(scenariotable[[4]]$Value_I[2],scenariotable[[4]]$Value_A[2],scenariotable[[4]]$Value_I[2]+scenariotable[[4]]$Value_A[2],scenariotable[[4]]$Labor_I[2],scenariotable[[4]]$Labor_A[2],scenariotable[[4]]$Labor_I[2]+scenariotable[[4]]$Labor_A[2]),
+                         P2 = c(scenariotable[[5]]$Value_I[2],scenariotable[[1]]$Value_A[2],scenariotable[[5]]$Value_I[2]+scenariotable[[5]]$Value_A[2],scenariotable[[5]]$Labor_I[2],scenariotable[[5]]$Labor_A[2],scenariotable[[5]]$Labor_I[2]+scenariotable[[5]]$Labor_A[2]),
+                         SQ = c(scenariotable[[3]]$Value_I[1],scenariotable[[3]]$Value_A[1],scenariotable[[3]]$Value_I[1]+scenariotable[[3]]$Value_A[1],scenariotable[[3]]$Labor_I[1],scenariotable[[3]]$Labor_A[1],scenariotable[[3]]$Labor_I[1]+scenariotable[[3]]$Labor_A[1]),
+                         row.names=c("Valor CHI","Valor CHD","Valor Total","Empleo Industrial","Empleo Artesanal","Empleo Total"))
+names(D1)=c(paste("-",AlphaRange[2]*100,"%\nCuota",sep=""),paste("-",AlphaRange[1]*100,"%\nCuota",sep=""),"Distribución\nOriginal",paste("+",AlphaRange[1]*100,"%\nCuota",sep=""),paste("+",AlphaRange[2]*100,"%\nCuota",sep=""),"Status\nQuo")
+
+```
+
+
+Sector pesquero (capturas) con distribución de cuotas en mercado cerrado (MC). Cuota de **`r TACSet`** millones toneladas de las cuales **`r AlphaSetText` %** está destinado a la flota Artesanal.
+
+
+```{r Part 2table, eval=T, echo=F,comment=NA, message=F, warning=F}
+# cat(paste("Sector pesquero (capturas) con distribución de cuotas en mercado cerrado\n Cuota de ",TACSet," Millones toneladas de las cuales ",AlphaSet[1]*100,"% está destinado a la flota Artesanal",sep=""))
+set.alignment(row.names = 'left')
+pander(D1,keep.line.breaks=T)
+
+D2=data.frame(names=c("Producción","Status Quo",
+  paste("Cuota Menos ",AlphaRange[2]*100,"%",sep=""),
+  paste("Cuota Menos ",AlphaRange[1]*100,"%",sep=""),
+  "Cuota Original",
+  paste("Cuota Más ",AlphaRange[1]*100,"%",sep=""),
+  paste("Cuota Más ",AlphaRange[2]*100,"%","\nValor",sep=""),
+  "Status Quo",
+  paste("Cuota Menos ",AlphaRange[2]*100,"%",sep=""),
+  paste("Cuota Menos ",AlphaRange[1]*100,"%",sep=""),
+  "Cuota Original",
+  paste("Cuota Más ",AlphaRange[1]*100,"%",sep=""),
+  paste("Cuota Más ",AlphaRange[2]*100,"%","\nEmpleo",sep=""),
+  "Status Quo",
+  paste("Cuota Menos ",AlphaRange[2]*100,"%",sep=""),
+  paste("Cuota Menos ",AlphaRange[1]*100,"%",sep=""),
+  "Cuota Original",
+  paste("Cuota Más ",AlphaRange[1]*100,"%",sep=""),
+  paste("Cuota Más ",AlphaRange[2]*100,"%",sep="")),
+  C1 = c(0,scenariotable[[3]]$Production_PC[1],scenariotable[[1]]$Production_PC[2],scenariotable[[2]]$Production_PC[2],scenariotable[[3]]$Production_PC[2],scenariotable[[4]]$Production_PC[2],scenariotable[[5]]$Production_PC[2],scenariotable[[3]]$Profit_PC[1],scenariotable[[1]]$Profit_PC[2],scenariotable[[2]]$Profit_PC[2],scenariotable[[3]]$Profit_PC[2],scenariotable[[4]]$Profit_PC[2],scenariotable[[5]]$Profit_PC[2],scenariotable[[3]]$Labor_PC[1],scenariotable[[1]]$Labor_PC[2],scenariotable[[2]]$Labor_PC[2],scenariotable[[3]]$Labor_PC[2],scenariotable[[4]]$Labor_PC[2],scenariotable[[5]]$Labor_PC[2]),
+                         C2 = c(0,scenariotable[[3]]$Production_PF[1],scenariotable[[1]]$Production_PF[2],scenariotable[[2]]$Production_PF[2],scenariotable[[3]]$Production_PF[2],scenariotable[[4]]$Production_PF[2],scenariotable[[5]]$Production_PF[2],scenariotable[[3]]$Profit_PF[1],scenariotable[[1]]$Profit_PF[2],scenariotable[[2]]$Profit_PF[2],scenariotable[[3]]$Profit_PF[2],scenariotable[[4]]$Profit_PF[2],scenariotable[[5]]$Profit_PF[2],scenariotable[[3]]$Labor_PF[1],scenariotable[[1]]$Labor_PF[2],scenariotable[[2]]$Labor_PF[2],scenariotable[[3]]$Labor_PF[2],scenariotable[[4]]$Labor_PF[2],scenariotable[[5]]$Labor_PF[2]),
+                         C3 = c(0,scenariotable[[3]]$Production_PU[1],scenariotable[[1]]$Production_PU[2],scenariotable[[2]]$Production_PU[2],scenariotable[[3]]$Production_PU[2],scenariotable[[4]]$Production_PU[2],scenariotable[[5]]$Production_PU[2],scenariotable[[3]]$Profit_PU[1],scenariotable[[1]]$Profit_PU[2],scenariotable[[2]]$Profit_PU[2],scenariotable[[3]]$Profit_PU[2],scenariotable[[4]]$Profit_PU[2],scenariotable[[5]]$Profit_PU[2],scenariotable[[3]]$Labor_PU[1],scenariotable[[1]]$Labor_PU[2],scenariotable[[2]]$Labor_PU[2],scenariotable[[3]]$Labor_PU[2],scenariotable[[4]]$Labor_PU[2],scenariotable[[5]]$Labor_PU[2]),
+                         C4 = c(0,scenariotable[[3]]$Production_PS[1],scenariotable[[1]]$Production_PS[2],scenariotable[[2]]$Production_PS[2],scenariotable[[3]]$Production_PS[2],scenariotable[[4]]$Production_PS[2],scenariotable[[5]]$Production_PS[2],scenariotable[[3]]$Profit_PS[1],scenariotable[[1]]$Profit_PS[2],scenariotable[[2]]$Profit_PS[2],scenariotable[[3]]$Profit_PS[2],scenariotable[[4]]$Profit_PS[2],scenariotable[[5]]$Profit_PS[2],scenariotable[[3]]$Labor_PS[1],scenariotable[[1]]$Labor_PS[2],scenariotable[[2]]$Labor_PS[2],scenariotable[[3]]$Labor_PS[2],scenariotable[[4]]$Labor_PS[2],scenariotable[[5]]$Labor_PS[2]))
+D2$C5=D2$C1+D2$C2+D2$C3+D2$C4
+names(D2)=c("","Enlatado","Congelado","Curado","Fresco/Salado","Total")
+D2[14:19,2:6]=1000*D2[14:19,2:6] #converts thousands of jobs to jobs
+D2[2:6]=round(D2[2:6],3)
+D2[1,2:6]=""
+
+```
+Producción en millones de toneladas, valor en millones de USD, y empleo en miles de puestos de trabajo.
+
+
+# Parte 3, Resultados por producto processado
+
+A continuación se presentan los resultados por tipo de producto derivado de la anchoveta. Para cada producto se presentan resultados de Status Quo, Cuota Orinigal elegida por el usuario, y los escenarios de más/menos 1 y 5% de cuota.
+
+Procesamiento para el escenario de Status Quo (SQ) y con cuota mercado cerrado (CM). Cuota de **`r TACSet`** millones de toneladas, de las cuales **`r AlphaSetText`%** está destinado al sector artesanal.
+
+```{r Part 3, eval=T, echo=F,comment=NA, message=F, warning=F}
+set.alignment("left")
+emphasize.strong.rows(c(2,8,14))
+pander(D2,keep.line.breaks=T)
+```
+
+Producción en millones de toneladas, valor en millones de USD, y empleo en miles de puestos de trabajo.
